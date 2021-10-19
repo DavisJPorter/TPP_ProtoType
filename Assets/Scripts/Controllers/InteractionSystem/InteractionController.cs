@@ -23,14 +23,14 @@ public class InteractionController : MonoBehaviour
         public float raySphereRadius;
         public LayerMask interactibleLayer;
 
-        private CharacterController fpplayer;
+        private Camera fpscam;
 
         private bool i_interacting;
         private float i_holdTimer = 0f;
 
         private void Awake()
         {
-            fpplayer = FindObjectOfType<CharacterController>();
+            fpscam = FindObjectOfType<Camera>();
         }
 
         private void Update()
@@ -41,7 +41,7 @@ public class InteractionController : MonoBehaviour
 
         void CheckForInteractible()
         {
-            Ray ray = new Ray(fpplayer.transform.position,fpplayer.transform.forward);
+            Ray ray = new Ray(fpscam.transform.position,fpscam.transform.forward);
             RaycastHit hitInfo;
 
             bool hitInteractible = Physics.SphereCast(ray, raySphereRadius, out hitInfo, rayDistance, interactibleLayer);
