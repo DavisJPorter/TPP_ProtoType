@@ -8,10 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5da7ba50464793d419b1e34906b8372b
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Testscene.unity
     guid: 09142dd9874ff5a459922bfbed10012c
+  - enabled: 1
+    path: Assets/Scenes/(CityCentre).unity
+    guid: b5e36f1ec38167046b5d5f74ef9a6df3
+  - enabled: 1
+    path: Assets/Scenes/(Farm).unity
+    guid: dab2f47daf80d98409c0bf471551ac7b
+  - enabled: 1
+    path: Assets/Scenes/(Campground).unity
+    guid: 1d39175448f113e4d9e0245596115886
+  - enabled: 1
+    path: Assets/Scenes/(Residential).unity
+    guid: 4d597d85f2d62f742a0506a2e195321f
   m_configObjects: {}

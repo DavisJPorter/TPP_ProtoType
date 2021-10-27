@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float walkSpeed = 5f;
     public float sprintSpeed = 10f;
+    public float crouchSpeed = 1f;
     public float currentSpeed;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -43,17 +44,16 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.height = 1f;
             controller.center = new Vector3(0f, -0.5f, 0f);
-            walkSpeed = 3f;
+            walkSpeed = crouchSpeed;
             isCrouching = true;
         }
 
         if (!Input.GetButton("Crouch") && isCrouching)
         {
-                walkSpeed = 3f;
             controller.height = originalHeight;
             controller.center = originalCenter;
             isCrouching = false;
-            walkSpeed = originalMoveSpeed;
+            crouchSpeed = originalMoveSpeed;
         }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
