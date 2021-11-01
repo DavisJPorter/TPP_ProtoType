@@ -50,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (!Input.GetButton("Crouch") && isCrouching)
         {
-            controller.height = originalHeight;
+                walkSpeed = crouchSpeed;
+                controller.height = originalHeight;
             controller.center = originalCenter;
             isCrouching = false;
             crouchSpeed = originalMoveSpeed;
