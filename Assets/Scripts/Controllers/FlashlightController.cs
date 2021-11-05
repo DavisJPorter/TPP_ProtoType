@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class FlashlightController : MonoBehaviour
 {
-    public TextMeshProUGUI batteryLifeText;
+    [SerializeField] private Image flashlightBar;
     public Light flashlight;
 
     public float power = 100;
@@ -19,7 +20,7 @@ public class FlashlightController : MonoBehaviour
 
     void Update()
     {
-        batteryLifeText.text = power + "%";
+        flashlightBar.fillAmount = power;
         if (Input.GetKeyDown(KeyCode.F) && usable)
         {
             flashlight.enabled = !flashlight.enabled;
@@ -27,7 +28,6 @@ public class FlashlightController : MonoBehaviour
         if (flashlight.enabled)
         {
            power -= Time.deltaTime * powerDrain;
-            
         }
         if (power > maxPower)
         {
