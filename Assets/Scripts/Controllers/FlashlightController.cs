@@ -18,6 +18,11 @@ public class FlashlightController : MonoBehaviour
     public int powerDrain = 1;
     private bool usable = true;
 
+    private void Awake()
+    {
+        flashlight.enabled = false;
+    }
+
     void Update()
     {
         flashlightBar.fillAmount = power;

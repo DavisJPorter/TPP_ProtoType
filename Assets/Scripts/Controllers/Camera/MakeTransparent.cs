@@ -13,6 +13,8 @@ public class MakeTransparent : MonoBehaviour
     {
         currentlyInTheWay = new List<Iam_InTheWay>();
         alreadyTransparent = new List<Iam_InTheWay>();
+
+        camera = this.gameObject.transform;
     }
     private void Update()
     {
@@ -25,7 +27,7 @@ public class MakeTransparent : MonoBehaviour
     {
 
         currentlyInTheWay.Clear();
-        float cameraPlayerDistance = Vector3.Magnitude(camera.position = player.position);
+        float cameraPlayerDistance = Vector3.Magnitude(camera.position - player.position);
 
         Ray ray1_Forward = new Ray(camera.position, player.position - camera.position);
         Ray ray1_Backward = new Ray(player.position, camera.position - player.position);
