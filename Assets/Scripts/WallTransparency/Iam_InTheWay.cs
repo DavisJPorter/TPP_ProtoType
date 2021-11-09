@@ -6,7 +6,6 @@ public class Iam_InTheWay : MonoBehaviour
 {
     [SerializeField] private GameObject solidBody;
     [SerializeField] private GameObject transparentBody;
-    // Start is called before the first frame update
     private void Awake()
     {
         ShowSolid();

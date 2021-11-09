@@ -6,26 +6,25 @@ using UnityEngine;
 
 public class FlashlightController : MonoBehaviour
 {
+    public Slider flashlightPower;
     [SerializeField] private Image flashlightBar;
     public Light flashlight;
 
-    public float power = 100;
-    private float maxPower = 100;
-    private float minPower = 0;
+    public float power = 100.0f;
+    private float maxPower = 100.0f;
+    private float minPower = 0.0f;
 
     private float batteryCharge = 100.0f;
     public int batteryCount = 3;
     public int powerDrain = 1;
     private bool usable = true;
 
-    private void Awake()
+    private void Start()
     {
         flashlight.enabled = false;
     }
-
     void Update()
     {
-        flashlightBar.fillAmount = power;
         if (Input.GetKeyDown(KeyCode.F) && usable)
         {
             flashlight.enabled = !flashlight.enabled;
@@ -54,5 +53,6 @@ public class FlashlightController : MonoBehaviour
             batteryCount -= 1;
         }
 
+        flashlightPower.value = power;
     }
 }
