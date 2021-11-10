@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09019018, g: 0.040601585, b: 0.1734553, a: 1}
+  m_IndirectSpecularColor: {r: 0.09019018, g: 0.040601555, b: 0.17345518, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19123,6 +19123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewMonster1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0eeb70ffd2ffd504899499d46e085634, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eeb70ffd2ffd504899499d46e085634, type: 3}
 --- !u!1 &1700209641 stripped
@@ -26547,6 +26551,22 @@ PrefabInstance:
     - target: {fileID: 5772671336872704410, guid: 4873496832a30d64b944b12cfb26c43c, type: 3}
       propertyPath: enemyCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036910609761989089, guid: 4873496832a30d64b944b12cfb26c43c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74042
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036910609761989089, guid: 4873496832a30d64b944b12cfb26c43c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036910609761989089, guid: 4873496832a30d64b944b12cfb26c43c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8328897833544221489, guid: 4873496832a30d64b944b12cfb26c43c, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8362416144119956570, guid: 4873496832a30d64b944b12cfb26c43c, type: 3}
       propertyPath: m_RootOrder
