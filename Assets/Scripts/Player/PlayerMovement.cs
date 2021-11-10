@@ -11,12 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
-    public float walkSpeed = 5f;
+    public float walkSpeed = 3f;
     public float sprintSpeed = 10f;
     public float crouchSpeed = 1f;
     public float currentSpeed;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+    public float playerStamina = 100.0f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -24,11 +25,16 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    bool sprintAble = true;
 
     private bool isCrouching;
     private Vector3 originalCenter;
     private float originalHeight;
     private float originalMoveSpeed;
+    private int staminaDrain = 10;
+    private float maxStamina = 100.0f;
+    private float minStamina = 0.0f;
+    private float staminaRegen = 100.0f;
 
     void Start()
     {
@@ -74,14 +80,30 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        if (Input.GetButtonDown("Run"))
+        if (Input.GetButtonDown("Run") && sprintAble)
         {
             walkSpeed = sprintSpeed;
+            playerStamina = maxStamina - staminaDrain;
         }
+        if (playerStamina > maxStamina)
+            {
+                playerStamina = maxStamina;
+            }
+        if (playerStamina < minStamina)
+            {
+                playerStamina = minStamina;
+                sprintAble = false;
+                walkSpeed = 3f;
+            }
         else if (Input.GetButtonUp("Run"))
         {
             walkSpeed = 3f;
+            playerStamina += staminaRegen;
         }
+        if (staminaRegen == maxStamina)
+            {
+                sprintAble = true;
+            }
 
 
 
