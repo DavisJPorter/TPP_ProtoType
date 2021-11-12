@@ -12,6 +12,7 @@ public class KeyHolder : MonoBehaviour
     }
     public void AddKey(Key.KeyType keyType)
     {
+        Debug.Log("Added Key" + keyType);
         keyList.Add(keyType);
     }
     public void RemoveKey(Key.KeyType keyType)
@@ -22,9 +23,9 @@ public class KeyHolder : MonoBehaviour
     {
         return keyList.Contains(keyType);
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        Key key = GetComponent<Key>();
+        Key key = collider.GetComponent<Key>();
         if (key != null)
         {
             AddKey(key.GetKeyType());

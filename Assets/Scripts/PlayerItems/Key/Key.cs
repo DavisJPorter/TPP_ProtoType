@@ -7,6 +7,8 @@ public class Key : MonoBehaviour
     [SerializeField] private KeyType keyType;
     public enum KeyType { 
         GateKey,
+        CarKey,
+        MedKey,
     }
     public KeyType GetKeyType()
     {
