@@ -47,10 +47,14 @@ public class FlashlightController : MonoBehaviour
         {
             usable = true;
         }
-        if (Input.GetKeyDown(KeyCode.R) && batteryCharge > 0)
+        if (Input.GetKeyDown(KeyCode.R) && batteryCharge >= 0)
         {
             power += batteryCharge;
             batteryCount -= 1;
+        }
+        if (batteryCount <= 0)
+        {
+            batteryCount = 0;
         }
 
         flashlightPower.value = power;

@@ -12,7 +12,8 @@ public class DoorOpen : InteractibleBase
     public override void OnInteract()
     {
             base.OnInteract();
-            door.GetComponent<Animation>().Play("DoorOpen");
+            door.GetComponent<Animation>().Play();
+            isInteractable = false;
     }
 }
 }
