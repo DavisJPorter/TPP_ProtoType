@@ -1,8 +1,9 @@
 using UnityEngine;
+using System.Collections;
 
 public class Target : MonoBehaviour
 {
-    public float health = 50f;
+    public float health = 100f;
 
     public void takeDamage(float amount)
     {
